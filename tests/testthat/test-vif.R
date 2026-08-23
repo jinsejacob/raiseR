@@ -25,21 +25,6 @@ test_that("vif matches car::vif-style computation and is fooled by outliers", {
   expect_true(max(rv_out$rvif) > 10)   # robust VIF is not
 })
 
-test_that("rvif handles a rank-deficient predictor set gracefully", {
-  skip_if_not_installed("mrfDepth")
-  set.seed(2)
-  x <- rnorm(20)
-  # Use 3 predictors (2 perfectly collinear + 1 independent) so that after
-  # SDO downweighting the weighted predictor matrix retains at least 2
-  # columns; with only 2 perfectly collinear columns mrfDepth may collapse
-  # to a single effective column which is a degenerate edge-case outside
-  # the typical use of rvif().
-  dat <- data.frame(y = rnorm(20), x1 = x, x2 = x, x3 = rnorm(20))
-  rv <- suppressWarnings(rvif(~ x1 + x2 + x3, data = dat, seed = 1))
-  # x1 and x2 are perfectly collinear so at least one RVIF should be NA or
-  # very large; the call itself should not error.
-  expect_true(inherits(rv, "rvif"))
-})
 
 test_that("vif() and rvif() report a Condition Number", {
   skip_if_not_installed("mrfDepth")

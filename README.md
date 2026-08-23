@@ -144,7 +144,6 @@ novel approach to combating collinearity in linear regression models.
 Jacob, J. and Varadharajan, R. (2024). Robust Variance Inflation Factor: A
 Promising Approach for Collinearity Diagnostics in the Presence of Outliers.
 *Sankhya B*, 86(2), 845-871.
-<https://doi.org/10.1007/s13571-024-00342-y>
 
 ## License
 

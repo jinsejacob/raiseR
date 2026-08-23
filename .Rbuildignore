@@ -1,2 +1,5 @@
 ^.*\.Rproj$
+^LICENSE$
+^\.Rbuildignore$
 ^\.Rproj\.user$
+^cran-comments\.md$
