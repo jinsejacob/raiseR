@@ -76,6 +76,13 @@
 #' @noRd
 .wcor <- function(X, w) {
   X <- as.matrix(X)
+  if (ncol(X) < 2L) {
+    # Cannot form a correlation matrix from a single column; return a 1x1
+    # matrix of 1 so callers get a valid (trivial) result rather than
+    # an error from colSums().
+    R <- matrix(1, 1L, 1L, dimnames = list(colnames(X), colnames(X)))
+    return(R)
+  }
   wsum <- sum(w)
   xbar <- colSums(X * w) / wsum
   Xc <- sweep(X, 2, xbar, "-")
