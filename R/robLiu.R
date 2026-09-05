@@ -52,7 +52,7 @@
 #' @examples
 #' fit_mm <- robLiu(mpg ~ disp + hp + wt + drat, data = mtcars)
 #' summary(fit_mm)
-#' \dontrun{
+#' \donttest{
 #' fit_sdo <- robLiu(mpg ~ disp + hp + wt + drat, data = mtcars,
 #'                    type = "SDO", seed = 1)
 #' summary(fit_sdo)
@@ -294,6 +294,8 @@ predict.robLiu <- function(object, newdata = NULL, ...) {
 #' @param x a \code{robLiu} object.
 #' @param which subset of 1:2.
 #' @param ... unused.
+#' @return Invisibly returns the fitted \code{robLiu} object `x`.
+#'   Called for its side effect of drawing diagnostic plots.
 #' @export
 plot.robLiu <- function(x, which = 1:2, ...) {
   op <- graphics::par(no.readonly = TRUE)

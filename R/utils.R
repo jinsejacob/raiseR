@@ -63,12 +63,18 @@
   }
   X <- as.matrix(X)
   if (!is.null(seed)) {
-    if (!exists(".Random.seed", envir = .GlobalEnv)) stats::runif(1)
-    old_seed <- get(".Random.seed", envir = .GlobalEnv)
-    on.exit(assign(".Random.seed", old_seed, envir = .GlobalEnv), add = TRUE)
-    set.seed(seed)
+    # Run the (randomised) outlyingness computation in a local, temporary
+    # RNG scope so that a user-supplied seed gives reproducible results
+    # without modifying the user's global random-number state. This uses
+    # withr::with_seed(), which saves and restores the RNG state internally
+    # and never writes to the global environment (CRAN policy compliant).
+    out <- withr::with_seed(
+      seed,
+      mrfDepth::outlyingness(X, X, options = list(type = "Rotation"))
+    )
+  } else {
+    out <- mrfDepth::outlyingness(X, X, options = list(type = "Rotation"))
   }
-  out <- mrfDepth::outlyingness(X, X, options = list(type = "Rotation"))
   as.numeric(out$outlyingnessX)
 }
 
@@ -76,13 +82,6 @@
 #' @noRd
 .wcor <- function(X, w) {
   X <- as.matrix(X)
-  if (ncol(X) < 2L) {
-    # Cannot form a correlation matrix from a single column; return a 1x1
-    # matrix of 1 so callers get a valid (trivial) result rather than
-    # an error from colSums().
-    R <- matrix(1, 1L, 1L, dimnames = list(colnames(X), colnames(X)))
-    return(R)
-  }
   wsum <- sum(w)
   xbar <- colSums(X * w) / wsum
   Xc <- sweep(X, 2, xbar, "-")

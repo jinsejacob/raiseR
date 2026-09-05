@@ -13,6 +13,10 @@
 
 \item{...}{passed on to the underlying plotting functions.}
 }
+\value{
+Invisibly returns the fitted \code{raiseReg} object `x`.
+  Called for its side effect of drawing diagnostic plots.
+}
 \description{
 Produces the same family of goodness-of-fit / diagnostic plots as
 \code{plot.lm}: residuals vs fitted, a normal Q-Q plot of the residuals,

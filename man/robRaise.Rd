@@ -24,7 +24,7 @@ robRaise(
 \item{data}{a data frame.}
 
 \item{method}{only \code{"simultaneous"} is implemented for the robust
-raise method (there is no robust analogue of the sequential
+raise regression (there is no robust analogue of the sequential
 one-variable-at-a-time strategy in this package); the argument exists
 so that passing anything else gives an informative error rather than
 R's generic "unused argument" message.}
@@ -67,13 +67,13 @@ an object of class \code{"robRaise"}. In addition to the usual
   \code{$dropped} (predictors excluded for exceeding \code{lambda_max}).
 }
 \description{
-Fits the Robust Raise Method: observations are downweighted by Tukey's
+Fits Robust Raise Regression: observations are downweighted by Tukey's
 biweight function applied to their Stahel-Donoho projection outlyingness
 in the joint (response, predictors) space, the weighted design is
 mean-centred using the corresponding weighted means, and every predictor
 whose weighted Sequential Variance Inflation Factor (SVIF) is at or above
 \code{threshold} is raised via a weighted QR decomposition -- combining
-the Raise Method's inference-preserving handling of collinearity with
+the Raise Regression's inference-preserving handling of collinearity with
 resistance to outliers in \eqn{X}, \eqn{Y} and \eqn{XY} space.
 }
 \details{
@@ -97,7 +97,7 @@ coefficient, exactly as \code{lm()} does for aliased terms; see
 \code{$dropped}.
 }
 \examples{
-\dontrun{
+\donttest{
 fit <- robRaise(mpg ~ disp + hp + wt + drat, data = mtcars, seed = 1)
 summary(fit)
 fit$vif; fit$svif; fit$cn

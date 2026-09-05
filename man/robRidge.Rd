@@ -65,7 +65,7 @@ Fits a robust version of Ridge Regression using one of two strategies.
 \examples{
 fit_mm <- robRidge(mpg ~ disp + hp + wt + drat, data = mtcars)
 summary(fit_mm)
-\dontrun{
+\donttest{
 fit_sdo <- robRidge(mpg ~ disp + hp + wt + drat, data = mtcars,
                      type = "SDO", seed = 1)
 summary(fit_sdo)

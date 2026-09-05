@@ -4,40 +4,58 @@
 \name{raiseR-package}
 \alias{raiseR}
 \alias{raiseR-package}
-\title{raiseR: Ordinary and Robust Raise, Ridge, and Liu Regression}
+\title{raiseR: Raise Regression and Robust Methods for Multicollinearity}
 \description{
 Tools for diagnosing and combating multicollinearity in linear
 regression models, with ordinary and outlier-resistant (robust) variants
-throughout: the Raise Method (\code{raiseReg}, \code{robRaise}), Ridge
+throughout: Raise Regression (\code{raiseReg}, \code{robRaise}), Ridge
 Regression (\code{ridgeReg}, \code{robRidge}), Liu Regression
 (\code{liuReg}, \code{robLiu}), collinearity diagnostics (\code{vif},
-\code{rvif}, \code{cn}), and a flexible \code{scale} function.
+\code{rvif}, \code{cn}), and a flexible \code{scaleDat} function.
 }
 \references{
 Jacob, J. and Varadharajan, R. (2023). Simultaneous raise regression: a
 novel approach to combating collinearity in linear regression models.
 \emph{Quality & Quantity}, 57(5), 4365-4386.
+\doi{10.1007/s11135-022-01557-9}
 
 Jacob, J. and Varadharajan, R. (2023). Raise estimation: An alternative
 approach in the presence of problematic multicollinearity.
-\emph{Mathematics and Statistics}, 51-64.
+\emph{Mathematics and Statistics}, 11(1), 51-64.
+\doi{10.13189/ms.2023.110106}
 
 Jacob, J. and Varadharajan, R. (2024). Robust Variance Inflation Factor:
 A Promising Approach for Collinearity Diagnostics in the Presence of
 Outliers. \emph{Sankhya B}, 86(2), 845-871.
+\doi{10.1007/s13571-024-00342-y}
+
+Jacob, J. (2025). Enhancing Linear Regression with Raise Techniques to
+Effectively Tackle the Multicollinearity Problem. PhD thesis, SRM
+Institute of Science and Technology, Kattankulathur, India.
 
 Hoerl, A. E. and Kennard, R. W. (1970). Ridge regression: Biased
-estimation for nonorthogonal problems. \emph{Technometrics}, 12(1), 55-67.
+estimation for nonorthogonal problems. \emph{Technometrics}, 12(1),
+55-67. \doi{10.1080/00401706.1970.10488634}
 
 Liu, K. (1993). A new class of biased estimate in linear regression.
-\emph{Communications in Statistics - Theory and Methods}, 22(2), 393-402.
+\emph{Communications in Statistics - Theory and Methods}, 22(2),
+393-402. \doi{10.1080/03610929308831027}
 
 Yohai, V. J. (1987). High breakdown-point and high efficiency robust
-estimates for regression. \emph{The Annals of Statistics}, 15(2), 642-656.
+estimates for regression. \emph{The Annals of Statistics}, 15(2),
+642-656. \doi{10.1214/aos/1176350366}
+
+Filzmoser, P. and Kurnaz, F. S. (2018). A robust Liu regression
+estimator. \emph{Communications in Statistics - Simulation and
+Computation}, 47(2), 432-443. \doi{10.1080/03610918.2016.1271889}
 
 Kan, B., Alpu, O. and Yazici, B. (2013). Robust ridge and robust Liu
 estimator for regression based on the LTS estimator. \emph{Journal of
 Applied Statistics}, 40(3), 644-655.
+\doi{10.1080/02664763.2012.750285}
+
+Belsley, D. A. (1991). \emph{A Guide to Using the Collinearity
+Diagnostics}. Computer Science in Economics and Management, 4(1), 33-50.
 }
 \seealso{
 Useful links:

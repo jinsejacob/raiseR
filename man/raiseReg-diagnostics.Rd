@@ -46,6 +46,26 @@ covRatio(model, ...)
 against which non-constant variance is tested (\code{ncvTest} only);
 defaults to the fitted values.}
 }
+\value{
+\code{hatvalues.raiseReg} returns a named numeric vector of hat
+  (leverage) values, one per observation.
+
+  \code{cooks.distance.raiseReg} returns a named numeric vector of
+  Cook's distances, one per observation.
+
+  \code{dfbetas.raiseReg} returns a numeric matrix of DFBETAS, with one
+  row per observation and one column per model coefficient.
+
+  \code{covRatio} and \code{covRatio.raiseReg} return a named numeric
+  vector of covariance ratios, one per observation. \code{covRatio} is
+  the S3 generic; \code{covRatio.default} dispatches to
+  \code{stats::covratio()}.
+
+  \code{ncvTest.raiseReg} returns an object of class \code{"chisqTest"}
+  (from the \pkg{car} package): a list containing the score-test
+  statistic \code{ChiSquare}, its degrees of freedom \code{Df}, and the
+  p-value \code{p} for the test of non-constant error variance.
+}
 \description{
 \code{raiseReg} objects support the standard influence-diagnostic suite
 (\code{hatvalues()}, \code{cooks.distance()}, \code{dfbetas()},

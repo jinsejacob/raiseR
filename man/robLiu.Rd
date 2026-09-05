@@ -77,7 +77,7 @@ mirroring \code{robRidge()}.
 \examples{
 fit_mm <- robLiu(mpg ~ disp + hp + wt + drat, data = mtcars)
 summary(fit_mm)
-\dontrun{
+\donttest{
 fit_sdo <- robLiu(mpg ~ disp + hp + wt + drat, data = mtcars,
                    type = "SDO", seed = 1)
 summary(fit_sdo)

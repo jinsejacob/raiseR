@@ -1,12 +1,12 @@
 #' Robust Raise Regression (RRM)
 #'
-#' Fits the Robust Raise Method: observations are downweighted by Tukey's
+#' Fits Robust Raise Regression: observations are downweighted by Tukey's
 #' biweight function applied to their Stahel-Donoho projection outlyingness
 #' in the joint (response, predictors) space, the weighted design is
 #' mean-centred using the corresponding weighted means, and every predictor
 #' whose weighted Sequential Variance Inflation Factor (SVIF) is at or above
 #' \code{threshold} is raised via a weighted QR decomposition -- combining
-#' the Raise Method's inference-preserving handling of collinearity with
+#' the Raise Regression's inference-preserving handling of collinearity with
 #' resistance to outliers in \eqn{X}, \eqn{Y} and \eqn{XY} space.
 #'
 #' Exact finite-sample inference is used throughout, following the sandwich
@@ -32,7 +32,7 @@
 #' @param formula a two-sided formula.
 #' @param data a data frame.
 #' @param method only \code{"simultaneous"} is implemented for the robust
-#'   raise method (there is no robust analogue of the sequential
+#'   raise regression (there is no robust analogue of the sequential
 #'   one-variable-at-a-time strategy in this package); the argument exists
 #'   so that passing anything else gives an informative error rather than
 #'   R's generic "unused argument" message.
@@ -60,7 +60,7 @@
 #'   design), \code{$k} (the raise parameters actually applied), and
 #'   \code{$dropped} (predictors excluded for exceeding \code{lambda_max}).
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' fit <- robRaise(mpg ~ disp + hp + wt + drat, data = mtcars, seed = 1)
 #' summary(fit)
 #' fit$vif; fit$svif; fit$cn
@@ -298,6 +298,8 @@ predict.robRaise <- function(object, newdata = NULL, ...) {
 #' @param x an \code{robRaise} object.
 #' @param which subset of 1:4 selecting which plots to draw.
 #' @param ... passed on to the underlying plotting functions.
+#' @return Invisibly returns the fitted \code{robRaise} object `x`.
+#'   Called for its side effect of drawing diagnostic plots.
 #' @export
 plot.robRaise <- function(x, which = 1:4, ...) {
   op <- graphics::par(no.readonly = TRUE)

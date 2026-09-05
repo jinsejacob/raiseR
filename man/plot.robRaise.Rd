@@ -13,6 +13,10 @@
 
 \item{...}{passed on to the underlying plotting functions.}
 }
+\value{
+Invisibly returns the fitted \code{robRaise} object `x`.
+  Called for its side effect of drawing diagnostic plots.
+}
 \description{
 Residuals-vs-fitted, a normal Q-Q plot of the residuals with points sized
 by their downweighting, a weight-vs-outlyingness plot, and a before/after

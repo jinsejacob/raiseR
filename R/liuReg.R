@@ -189,6 +189,8 @@ predict.liuReg <- function(object, newdata = NULL, ...) {
 #' @param x a \code{liuReg} object.
 #' @param which subset of 1:2.
 #' @param ... unused.
+#' @return Invisibly returns the fitted \code{liuReg} object `x`.
+#'   Called for its side effect of drawing diagnostic plots.
 #' @export
 plot.liuReg <- function(x, which = 1:2, ...) {
   op <- graphics::par(no.readonly = TRUE)

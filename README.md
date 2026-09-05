@@ -3,7 +3,7 @@
 Ordinary and Robust Raise, Ridge, and Liu Regression, with Condition Number
 and Variance Inflation Factor diagnostics, for R.
 
-`raiseR` implements the **Raise Method**: an alternative to Ridge Regression
+`raiseR` implements the **Raise Regression**: an alternative to Ridge Regression
 for combating multicollinearity that, unlike Ridge, leaves ordinary
 least-squares inference intact. By construction, a raised design matrix
 reproduces the OLS fitted values, residual standard error, R-squared and
@@ -125,7 +125,7 @@ identical to an equivalent `lm()` fit.
 For `raiseReg()`, the residual standard error, R-squared, F-statistic and
 the standard errors underlying the coefficient table are computed from the
 *raised* design and are therefore numerically identical to their OLS
-counterparts -- this is the entire point of the raise method. `fitted()`,
+counterparts -- this is the entire point of the raise regression. `fitted()`,
 `residuals()` and `predict()`, which must apply to new data, apply the raise
 coefficients to the *original, unraised* predictors instead, and so differ
 very slightly from the training fit implied by the reported R-squared.

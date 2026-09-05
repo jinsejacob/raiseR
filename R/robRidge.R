@@ -37,7 +37,7 @@
 #' @examples
 #' fit_mm <- robRidge(mpg ~ disp + hp + wt + drat, data = mtcars)
 #' summary(fit_mm)
-#' \dontrun{
+#' \donttest{
 #' fit_sdo <- robRidge(mpg ~ disp + hp + wt + drat, data = mtcars,
 #'                      type = "SDO", seed = 1)
 #' summary(fit_sdo)
@@ -233,6 +233,8 @@ predict.robRidge <- function(object, newdata = NULL, ...) {
 #' @param x an \code{robRidge} object.
 #' @param which subset of 1:2.
 #' @param ... unused.
+#' @return Invisibly returns the fitted \code{robRidge} object `x`.
+#'   Called for its side effect of drawing diagnostic plots.
 #' @export
 plot.robRidge <- function(x, which = 1:2, ...) {
   op <- graphics::par(no.readonly = TRUE)

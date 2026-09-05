@@ -68,7 +68,7 @@ an object of class \code{"raiseReg"}. In addition to the usual
   excluded for exceeding \code{lambda_max}).
 }
 \description{
-Fits the Raise Method, an inference-preserving alternative to Ridge
+Fits Raise Regression, an inference-preserving alternative to Ridge
 Regression for combating multicollinearity. Two strategies are available:
 \describe{
   \item{\code{"simultaneous"}}{Simultaneous Raise Regression (SRR) of

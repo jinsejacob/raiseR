@@ -116,6 +116,8 @@ predict.ridgeReg <- function(object, newdata = NULL, ...) {
 #' @param x a \code{ridgeReg} object.
 #' @param which subset of 1:2.
 #' @param ... unused.
+#' @return Invisibly returns the fitted \code{ridgeReg} object `x`.
+#'   Called for its side effect of drawing diagnostic plots.
 #' @export
 plot.ridgeReg <- function(x, which = 1:2, ...) {
   op <- graphics::par(no.readonly = TRUE)

@@ -1,44 +1,47 @@
 Package: raiseR
 Type: Package
-Title: Ordinary and Robust Raise, Ridge, and Liu Regression, Condition
-        Number, and Variance Inflation Factors
+Title: Raise Regression and Robust Methods for Multicollinearity
 Version: 0.1.0
 Authors@R: person(given = "Jinse", family = "Jacob", email = "jinsejacob@hotmail.com",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0873-4864"))
-Description: Implements the Raise Method as an inference-preserving alternative to
-    Ridge Regression for combating multicollinearity in linear models, including the
-    classical single-variable Raise Method, the Simultaneous Raise Regression (SRR)
-    based on QR decomposition and the Sequential Variance Inflation Factor (SVIF)
-    of Jacob and Varadharajan (2022) <doi:10.1007/s11135-022-01557-9>, and the
-    original raise parameter selection strategy of Jacob and Varadharajan (2023)
-    <doi:10.13189/ms.2023.110106>. Also implements a Robust Raise Method for data
-    contaminated by outliers, with exact finite-sample inference (sandwich standard
-    errors, Wald tests, Satterthwaite-corrected degrees of freedom) obtained by
-    down-weighting observations using Stahel-Donoho projection outlyingness and
-    Tukey's biweight function. Provides ordinary and robust Ridge Regression (Hoerl
-    and Kennard, 1970, Technometrics, 12(1), 55-67), ordinary and robust Liu
-    Regression (Liu, 1993, Communications in Statistics - Theory and Methods,
-    22(2), 393-402), with the robust MM variants of both following the MM-estimator
-    framework of Yohai (1987, Annals of Statistics, 15(2), 642-656) and, for Liu
-    regression specifically, the biasing-parameter derivation of Filzmoser and
-    Kurnaz's robust MM-Liu estimator. Also provides the classical Variance
-    Inflation Factor (VIF) and Condition Number (Belsley, 1991) computed from the
-    correlation matrix of the predictors, and the Robust Variance Inflation Factor
-    (RVIF) and robust Condition Number of Jacob and Varadharajan (2024, Sankhya B,
-    86(2), 845-871), which use the same projection outlyingness and biweight
-    downweighting scheme to obtain a weighted correlation matrix that resists the
-    influence of outliers. A flexible scale() function supports classical
-    (mean/sd), robust weighted (Stahel-Donoho/Tukey biweight), median/MADN, and
-    min-max [0, 1] scaling. Diagnostic and goodness-of-fit plots, and the standard
-    influence-diagnostic suite (Cook's distance, DFBETAS, COVRATIO) and
-    heteroskedasticity tests (via the 'lmtest' and 'car' packages) analogous to
-    those for objects of class 'lm', are provided for the (exact, unbiased) Raise
-    Method fit.
+Description: Implements Raise Regression as an inference-preserving alternative to
+    Ridge Regression for combating multicollinearity in linear models, including
+    the classical single-variable Raise Regression, the Simultaneous Raise
+    Regression (SRR) based on QR decomposition and the Sequential Variance
+    Inflation Factor (SVIF) of Jacob and Varadharajan (2022)
+    <doi:10.1007/s11135-022-01557-9>, and the original raise parameter selection
+    strategy of Jacob and Varadharajan (2023) <doi:10.13189/ms.2023.110106>. Also
+    implements Robust Raise Regression for data contaminated by outliers, with
+    exact finite-sample inference (sandwich standard errors, Wald tests,
+    Satterthwaite-corrected degrees of freedom) obtained by down-weighting
+    observations using Stahel-Donoho projection outlyingness and Tukey's biweight
+    function. Provides ordinary and robust Ridge Regression (Hoerl and Kennard,
+    1970, <doi:10.1080/00401706.1970.10488634>), ordinary and robust Liu
+    Regression (Liu, 1993, <doi:10.1080/03610929308831027>), with the robust
+    variants of both based on the MM-estimates of Yohai (1987,
+    <doi:10.1214/aos/1176350366>) and, for Liu Regression specifically, the
+    biasing-parameter derivation of Filzmoser and Kurnaz (2018)
+    <doi:10.1080/03610918.2016.1271889>. Also provides the classical Variance
+    Inflation Factor (VIF) and Condition Number (Belsley, 1991) computed from
+    the correlation matrix of the predictors, and the Robust Variance Inflation
+    Factor (RVIF) and robust Condition Number of Jacob and Varadharajan (2024,
+    Sankhya B, <doi:10.1007/s13571-024-00342-y>), which use the same projection
+    outlyingness and biweight down-weighting scheme to obtain a weighted
+    correlation matrix that resists the influence of outliers. A flexible
+    scaleDat() function supports classical (mean and standard deviation), robust
+    weighted (Stahel-Donoho and Tukey biweight), median and Median Absolute
+    Deviation Normalized (MADN, the median absolute deviation scaled by 1.4826
+    to estimate the standard deviation under normality), and min-max scaling.
+    Diagnostic and goodness-of-fit plots, and the standard
+    influence-diagnostic suite (Cook's distance, DFBETAS and COVRATIO regression
+    diagnostics) and heteroskedasticity tests (via
+    the 'lmtest' and 'car' packages) analogous to those for objects of class
+    'lm', are provided for the exact, unbiased Raise Regression fit.
 License: GPL (>= 3)
 Encoding: UTF-8
 RoxygenNote: 7.3.1
 Depends: R (>= 3.5.0)
-Imports: stats, graphics, grDevices, mrfDepth, MASS
+Imports: stats, graphics, grDevices, mrfDepth, MASS, withr
 Suggests: testthat (>= 3.0.0), lmtest, car
 URL: https://github.com/jinsejacob/raiseR
 BugReports: https://github.com/jinsejacob/raiseR/issues

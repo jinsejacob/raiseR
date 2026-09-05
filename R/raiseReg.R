@@ -1,6 +1,6 @@
 #' Raise Regression
 #'
-#' Fits the Raise Method, an inference-preserving alternative to Ridge
+#' Fits Raise Regression, an inference-preserving alternative to Ridge
 #' Regression for combating multicollinearity. Two strategies are available:
 #' \describe{
 #'   \item{\code{"simultaneous"}}{Simultaneous Raise Regression (SRR) of
@@ -293,6 +293,8 @@ predict.raiseReg <- function(object, newdata = NULL, ...) {
 #' @param x a \code{raiseReg} object.
 #' @param which subset of 1:4 selecting which plots to draw.
 #' @param ... passed on to the underlying plotting functions.
+#' @return Invisibly returns the fitted \code{raiseReg} object `x`.
+#'   Called for its side effect of drawing diagnostic plots.
 #' @export
 plot.raiseReg <- function(x, which = 1:4, ...) {
   op <- graphics::par(no.readonly = TRUE)

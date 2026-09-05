@@ -13,6 +13,10 @@
 
 \item{...}{unused.}
 }
+\value{
+Invisibly returns the fitted \code{ridgeReg} object `x`.
+  Called for its side effect of drawing diagnostic plots.
+}
 \description{
 Diagnostic plots for a ridgeReg object
 }

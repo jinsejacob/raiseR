@@ -74,7 +74,7 @@ scaleDat(mtcars)                    # same algorithm as base::scale(mtcars)
 scaleDat(mtcars, scale = FALSE)     # same algorithm as base::scale(mtcars, scale = FALSE)
 scaleDat(mtcars, type = "median")   # median/MADN
 scaleDat(mtcars, type = "range")    # min-max to [0, 1]
-\dontrun{
+\donttest{
 scaleDat(mtcars, type = "weighted") # Stahel-Donoho + Tukey biweight
 }
 }
