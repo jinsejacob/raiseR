@@ -144,6 +144,32 @@ novel approach to combating collinearity in linear regression models.
 Jacob, J. and Varadharajan, R. (2024). Robust Variance Inflation Factor: A
 Promising Approach for Collinearity Diagnostics in the Presence of Outliers.
 *Sankhya B*, 86(2), 845-871.
+<https://doi.org/10.1007/s13571-024-00342-y>
+
+Jacob, J. (2025). Enhancing Linear Regression with Raise Techniques to
+Effectively Tackle the Multicollinearity Problem. PhD thesis, SRM Institute
+of Science and Technology, Kattankulathur, India.
+
+Hoerl, A. E. and Kennard, R. W. (1970). Ridge regression: Biased estimation
+for nonorthogonal problems. *Technometrics*, 12(1), 55-67.
+<https://doi.org/10.1080/00401706.1970.10488634>
+
+Liu, K. (1993). A new class of biased estimate in linear regression.
+*Communications in Statistics - Theory and Methods*, 22(2), 393-402.
+<https://doi.org/10.1080/03610929308831027>
+
+Yohai, V. J. (1987). High breakdown-point and high efficiency robust
+estimates for regression. *The Annals of Statistics*, 15(2), 642-656.
+<https://doi.org/10.1214/aos/1176350366>
+
+Filzmoser, P. and Kurnaz, F. S. (2018). A robust Liu regression estimator.
+*Communications in Statistics - Simulation and Computation*, 47(2), 432-443.
+<https://doi.org/10.1080/03610918.2016.1271889>
+
+Kan, B., Alpu, O. and Yazici, B. (2013). Robust ridge and robust Liu
+estimator for regression based on the LTS estimator. *Journal of Applied
+Statistics*, 40(3), 644-655.
+<https://doi.org/10.1080/02664763.2012.750285>
 
 ## License
 
