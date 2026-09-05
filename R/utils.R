@@ -82,6 +82,10 @@
 #' @noRd
 .wcor <- function(X, w) {
   X <- as.matrix(X)
+  if (ncol(X) < 2L) {
+    R <- matrix(1, 1L, 1L, dimnames = list(colnames(X), colnames(X)))
+    return(R)
+  }
   wsum <- sum(w)
   xbar <- colSums(X * w) / wsum
   Xc <- sweep(X, 2, xbar, "-")

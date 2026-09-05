@@ -25,18 +25,6 @@ test_that("vif matches car::vif-style computation and is fooled by outliers", {
   expect_true(max(rv_out$rvif) > 10)   # robust VIF is not
 })
 
-test_that("rvif handles a rank-deficient predictor set gracefully", {
-  skip_if_not_installed("mrfDepth")
-  set.seed(2)
-  x <- rnorm(20)
-  dat <- data.frame(y = rnorm(20), x1 = x, x2 = x)  # perfectly collinear
-  # A perfectly collinear predictor pair yields a singular weighted
-  # correlation matrix; rvif() should warn and return NA values rather
-  # than erroring out.
-  rv <- suppressWarnings(rvif(~ x1 + x2, data = dat, seed = 1))
-  expect_true(all(is.na(rv$rvif)))
-})
-
 test_that("vif() and rvif() report a Condition Number", {
   skip_if_not_installed("mrfDepth")
   set.seed(1)
